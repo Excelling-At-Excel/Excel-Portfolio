@@ -4,8 +4,7 @@
 
 <img src="https://www.versionmuseum.com/images/applications/microsoft-excel/microsoft-excel%5E2016%5Eexcel-logo-new.png" width="950" height="225" />
 
-
-# [Project 1: Sales Report By Card Type]
+# [Project 1: Sales Report By Card Type](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Sales%20Report%20By%20Card%20Type.xlsx)
 > ### With no available Unique Identifiers
 
 ## Created a workbook that utilizes a variety of formulas to pull data from a Source Report and Outputs it into a user friendly dashboard
@@ -35,7 +34,7 @@
 > ### The following Formula is a 7 part, nested If-Statement (Shown in the Linked Report)
 > > * =If(IsNumber(Search("abc",A1)),Concatenate(A1, "-",Left(B1,7))
 > > 
-> > > Check a specified Cell for One of Seven different criteria Text-Strings. If one of the seven Text-Strings is found within the cell, then Concatenate a pre-determined Text-String with the Page Number that was given to use from our last formula.  The output will make the official Uniqe Identifier that will be used for the formulas housed in the Output Dashboard Sheet.  (If the specified Text-String is not found, then set Cell to Blank.)
+> > > Check a specified Cell for One of Seven different criteria Text-Strings. If one of the seven Text-Strings is found within the cell, then Concatenate a pre-determined Text-String with the Page Number that was given to use from our last formula.  The output will make the official Unique Identifier that will be used for the formulas housed in the Output Dashboard Sheet.  (If the specified Text-String is not found, then set Cell to Blank.)
 
 ---------------------------------------
 
@@ -47,17 +46,17 @@
 ---------------------------------------
 
 > * =CONCATENATE($B$2," - ","Page:  ",$F$2)
-> > Concatenates a pre-determined Text-String with the Numerical Value from the above formula, to create a true Uniqe Identifier.  (This will be used in a later formula)
+> > Concatenates a pre-determined Text-String with the Numerical Value from the above formula, to create a true Unique Identifier.  (This will be used in a later formula)
 
 ---------------------------------------
 
 > * =ABS(MATCH($G$2,'Source Report'!$M:$M,0)-MATCH('Source Report'!$G$3,'Source Report'!$M:$M,0))-1
-> > Checks a pre-determined Text-String within a pre-determined Range and outputs the absolute value of your criteria and then compares it to a second pre-determined Text-String withing the range.  Next, it will find the difference between the absolute values and will output the Numerical Value.  (This will be used in a later formula)
+> > Checks a pre-determined Text-String within a pre-determined Range and outputs the absolute value of your criteria and then compares it to a second pre-determined Text-String within the range.  Next, it will find the difference between the absolute values and will output the Numerical Value.  (This will be used in a later formula)
 
 ---------------------------------------
 
 > * =IFNA(VLOOKUP($B3,OFFSET('Source Report'!$A$1,MATCH($G$2,'Source Report'!$M:$M,0),0,$J$3,3),3,0),0)
-> > Uses a pre-determined Cell as a Lookup-Value to be used with the VLookup.  Then, while using the Offset Function to start the Match function at the top row of the Source Report, Match a pre-determined Cell to it's Unique Identifier withing a pre-determined Range.  Then using the value obtained from the formula above, that will decide how many rows are needed for the Offset function, in order to guarantee no overlaps in data.  Lastly, finishing the VLookup, after finding the correct Match via using the Unique Identifier created in an earlier formula, output the data from the third column of the range as a Numerical Value.  (This formula is repeated one cell to the left and will pull from the second column instead of the third.)
+> > Uses a pre-determined Cell as a Lookup-Value to be used with the VLookup.  Then, while using the Offset Function to start the Match function at the top row of the Source Report, Match a pre-determined Cell to its Unique Identifier within a pre-determined Range.  Then using the value obtained from the formula above, that will decide how many rows are needed for the Offset function, in order to guarantee no overlaps in data.  Lastly, finishing the VLookup, after finding the correct Match via using the Unique Identifier created in an earlier formula, output the data from the third column of the range as a Numerical Value.  (This formula is repeated one cell to the left and will pull from the second column instead of the third.)
 
 ---------------------------------------
 
