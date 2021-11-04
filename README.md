@@ -67,6 +67,7 @@
 ---------------------------------------
 
 # [Project 2: Summary of Funds](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Summary%20of%20Funds.xlsx)
+> ### Report with individual Summaries, per Program, and a Summary Wrap-Up for all Programs
 
 ## Created a workbook that utilizes a variety of formulas to pull data from a multiple Source Report and Outputs it into multiple Program Summary Dashboards and are then tied into an all encompassing Summary Dashboard.
 
