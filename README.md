@@ -2,8 +2,10 @@
 ## Showcasing my knowledge & understanding of Excel and it's many Functions.
 > ###### For legal reasons, all numerical data within the Source Report has been changed using =RANDBETWEEN() and all names have been changed to a Customer Number (EX: Customer 37)
 
-<img src="https://www.versionmuseum.com/images/applications/microsoft-excel/microsoft-excel%5E2016%5Eexcel-logo-new.png" width="950" height="225" />
-
+<p align="center">
+<img src="https://www.versionmuseum.com/images/applications/microsoft-excel/microsoft-excel%5E2016%5Eexcel-logo-new.png" width="950" height="250" />
+</p>
+  
 # [Project 1: Sales Report By Card Type](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Sales%20Report%20By%20Card%20Type.xlsx)
 > ### With no available Unique Identifiers
 
