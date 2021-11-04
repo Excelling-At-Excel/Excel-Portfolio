@@ -38,11 +38,24 @@
 ##
 
 ### The following Formulas are housed in Sheet2 of the Linked Report.  (Where the Output is displayed in a Dashboard)
-> * =IfNA(VLookup(Offset(Match)))
-> * =CountIf('Source Report'!$M:$M,"* Partial Match * )
-> * =ABS(Match(*Criteria*,'Source Report'!$M:$M,0)-Match('Output Dashboard'!$G$3,'Source Report'!$M$M,0))-1
 
+> * =COUNTIF('Source Report'!$M:$M," * abc * ")
+> > Searches the specified range for any Cells that contain a pre-determined Text-String.  Then, count how many instances of the Text-String are within the range and output the Numerical Value.  (This value will be used in a later formula)
 
-* Engineered features from the text of each job description to quantify the value companies put on python, excel, aws, and spark. 
-* Optimized Linear, Lasso, and Random Forest Regressors using GridsearchCV to reach the best model. 
-* Built a client facing API using flask 
+##
+
+> * =CONCATENATE($B$2," - ","Page:  ",$F$2)
+> > Concatenates a pre-determined Text-String with the Numerical Value from the above formula, to create a true Uniqe Identifier.  (This will be used in a later formula)
+
+##
+
+> * =ABS(MATCH($G$2,'Source Report'!$M:$M,0)-MATCH('Source Report'!$G$3,'Source Report'!$M:$M,0))-1
+> > Checks a pre-determined Text-String within a pre-determined Range and outputs the absolute value of your criteria and then compares it to a second pre-determined Text-String withing the range.  Next, it will find the difference between the absolute values and will output the Numerical Value.  (This will be used in a later formula)
+
+##
+
+> * =IFNA(VLOOKUP($B3,OFFSET('Source Report'!$A$1,MATCH($G$2,'Source Report'!$M:$M,0),0,$J$3,3),3,0),0)
+> > Uses a pre-determined Cell as a Lookup-Value to be used with the VLookup.  Then, while using the Offset Function to start the Match function at the top row of the Source Report, Match a pre-determined Cell to it's Unique Identifier withing a pre-determined Range.  Then using the value obtained from the formula above, that will decide how many rows are needed for the Offset function, in order to guarantee no overlaps in data.  Lastly, finishing the VLookup, after finding the correct Match via using the Unique Identifier created in an earlier formula, output the data from the third column of the range as a Numerical Value.  (This formula is repeated one cell to the left and will pull from the second column instead of the third.)
+
+##
+
