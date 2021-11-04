@@ -17,7 +17,7 @@
 ### The following Formulas are housed in Sheet1 of the Linked Report.  (Where the Source Report is pasted into)
 
 > * =IF(ISNUMBER(SEARCH("PAGE:",$G1))=TRUE,IF(ISNUMBER(VALUE(TRIM(RIGHT(G1,2))))=TRUE,TRIM(RIGHT(G1,2)),""),"")
-  > > Searches a specified Cell for a pre-determined text-string.  If the Text-String is found, then pull the last 2 characters from the string.  (In this reports case, I needed to pull the Page Number from the specified cell).  If one of the 2 characters being pulled is a space, then remove the space. Lastly, this will convert the outcome into a Numerical Value instead of a Text Value.  (If I pulled from "Page: 53", the 53 would be considered a Text-String instead of a Numerical Value  
+  > > Searches a specified Cell for a pre-determined Text-string.  If the Text-String is found, then pull the last 2 characters from the string.  (In this reports case, I needed to pull the Page Number from the specified cell).  If one of the 2 characters being pulled is a space, then remove the space. Lastly, this will convert the outcome into a Numerical Value instead of a Text Value.  (If I pulled from "Page: 53", the 53 would be considered a Text-String instead of a Numerical Value  
 
 ---------------------------------------
 
