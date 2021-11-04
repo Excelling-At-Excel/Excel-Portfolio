@@ -12,7 +12,7 @@
 ## Created a workbook that utilizes a variety of formulas to pull data from a Source Report and Outputs it into a user friendly dashboard
 
 ### Formulas/Functions included in this report are as follows:
-> Note: Not all Full Formulas are included within the Linked Report, but will not be shown here due to length.
+> Note: All Full Formulas are included within the Linked Report, but some will not be shown here due to length.
 
 * * *
 
@@ -66,3 +66,75 @@
   
 ---------------------------------------
 
+# [Project 2: Summary of Funds]
+
+## Created a workbook that utilizes a variety of formulas to pull data from a multiple Source Report and Outputs it into multiple Program Summary Dashboards and are then tied into an all encompassing Summary Dashboard.
+
+### Formulas/Functions included in this report are as follows:
+> Note: All Full Formulas are included within the Linked Report, but some will not be shown here due to length.
+
+* * *
+
+### The following Formula is housed in Sheet1 (Criteria) of the Linked Report.  (Where the first Source Report is housed)
+
+> * =CONCATENATE("SII:  ",B2," - ",C2)
+  > > Concatenates a pre-defined Text-String with a specified Cell with another Text-String, to create a Unique Identifier. (Used in a future formula)
+
+### The following Formulas are housed in Sheet2 (CM) of the Linked Report.  (Where the Output is displayed in a Summary Dashboard)
+
+> * =MID(CELL("filename",A1),FIND("]",CELL("filename",A1))+1,255)
+  > > Finds the name of the sheet that this formula is in and outputs the exact name of the sheet.  (Used in a future formula)
+
+---------------------------------------
+
+> * =VLOOKUP($F$1,Criteria!$B:$D,3,0)
+  > > Utilizing VLookup, use a specified Cell as criteria to search in Sheet1 (Criteria) to then output the corresponding Text-String.  (If "CM" is the Criteria, then output "SII:  CM - Financial Mgmt"
+
+---------------------------------------
+
+> * =MID(A4,12,999)
+  > > Obtain a Text-String by using a specified Cell.  Using the =Mid formula, select the Cell where the output of the above formula was placed.  Then, starting at the 12th character, pull the remainder of the Text-String and output as a Text-String.
+
+---------------------------------------
+
+> * =SUMIFS('Daily Funds Status'!K:K,'Daily Funds Status'!C:C,F1,'Daily Funds Status'!A:A,"52FA")/1000
+  > > Using data from Sheet3 (Daily Funds Status), use column "K" as a Sum Range and Column "C" as the Criteria Range.  $F$1 is being used as the Unique Identifier that will be used to match against data Column "C" in Sheet3.  The Text-String of "52FA" will be used as the second Unique Identifier to be matched against Column "A" in sheet3.  Lastly, Divide by 1000 in order to set the output result to show in "Thousands" 
+  > > (This formula is then repeated two times, while only changing the Criteria for the Sum Range)
+  > > > 1. $E:$6 uses Column "P"
+  > > > 1. $E:$11 uses Column "T"
+
+---------------------------------------
+
+> * =E15-SUM(E16:E18)
+> > Takes the Numerical Value within the Cell and subracts out the Sum of the following line items:
+> > > 1. Total Support Costs posted to SABRS"
+> > > 1. GPC Transactions On Log Not posted to SABRS
+> > > 1. Other Transactions not yet in SABRS
+
+---------------------------------------
+
+### The following Formulas are housed in Sheet4 (Summary) of the Linked Report.  (Where the Output of all Individual Program Summaries are displayed in an all encompassing Summary Dashboard)
+
+> * =CONCATENATE($D$4," 1200 OMN SABRS Balance  (K)")
+> > Concatenates a pre-determined Cell with a pre-determined Text-String to output a Header for the Summary Dashboard.  (Pulls the date from the Source Report that is referenced within this sheet.)
+> > > (This step is then repeated for the Cell directly to the right, with the only change being the pre-determined Text-String)
+
+---------------------------------------
+
+> * =IF($B4=CM!$F$1,CM!$E$4,"ERROR - DATE")
+> > Checks if the criteria in a pre-determined Cell matches against the Criteria antoher pre-determined Cell in the corresponding Sheet.  If the criteria both match 1:1, then pull data Cell $E$4 from the corresponding sheet and Output as a Numerical Value.  (If there is an error then it will inform you instead of just zero'ing out)
+> > > (This step is then repeated for the next four Cells directly to the right, with the only change being the pre-determined Text-String and which Cell in the corresponding sheet is being referenced)
+> > > > 1. Sheet3 (Summary) $E:$4 is referencing Sheet2 (CM) $E$7
+> > > > 1. Sheet3 (Summary) $F:$4 is referencing Sheet2 (CM) $E$12
+> > > > 1. Sheet3 (Summary) $G:$4 is referencing Sheet2 (CM) $E$9
+> > > > 1. Sheet3 (Summary) $H:$4 is referencing Sheet2 (CM) $E$21
+
+<p align="center">  
+<img src="https://i.imgur.com/mubV3LG.png"/>
+</p>
+
+<p align="center">  
+<img src="https://i.imgur.com/uPelMih.png"/>
+</p>
+
+---------------------------------------
