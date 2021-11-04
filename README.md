@@ -60,5 +60,9 @@
 > * =IFNA(VLOOKUP($B3,OFFSET('Source Report'!$A$1,MATCH($G$2,'Source Report'!$M:$M,0),0,$J$3,3),3,0),0)
 > > Uses a pre-determined Cell as a Lookup-Value to be used with the VLookup.  Then, while using the Offset Function to start the Match function at the top row of the Source Report, Match a pre-determined Cell to its Unique Identifier within a pre-determined Range.  Then using the value obtained from the formula above, that will decide how many rows are needed for the Offset function, in order to guarantee no overlaps in data.  Lastly, finishing the VLookup, after finding the correct Match via using the Unique Identifier created in an earlier formula, output the data from the third column of the range as a Numerical Value.  (This formula is repeated one cell to the left and will pull from the second column instead of the third.)
 
+<p align="center">  
+<img src="https://i.imgur.com/LhQV3oz.png"/>
+</p>
+  
 ---------------------------------------
 
