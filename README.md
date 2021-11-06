@@ -6,7 +6,7 @@
 <img src="https://www.versionmuseum.com/images/applications/microsoft-excel/microsoft-excel%5E2016%5Eexcel-logo-new.png" width="950" height="250" />
 </p>
   
-# [Project 1: Sales Report By Card Type](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Sales%20Report%20By%20Card%20Type.xlsx)
+# [Project 1: Sales Report By Payment Card Type](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Sales%20Report%20By%20Card%20Type.xlsx)
 > ### With no available Unique Identifiers
 
 ## Created a workbook that utilizes a variety of formulas to pull data from a Source Report and Outputs it into a user friendly dashboard
@@ -139,3 +139,43 @@
 </p>
 
 ---------------------------------------
+
+# [Project 3: Credit Card Transaction Detail](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Sales%20Report%20By%20Card%20Type.xlsx)
+> ### Report of credit transactions, broken out by card type and currency.
+
+## Created a simple workbook that utilizes a basic excel functions, such as SumIfs and CountIfs that gathers data from a singular source report and disperses it into a mult-tiered Summary Dashboard.
+
+### Formulas/Functions included in this report are as follows:
+> Note: All Full Formulas are included within the Linked Report, but some will not be shown here due to length.
+
+---------------------------------------
+
+### The following Formula is housed in Sheet1 (Source Report) of the Linked Report.
+
+> * =SUMIFS('Source Report'!$J:$J,'Source Report'!$H:$H,'Output Dashboard'!$B$2,'Source Report'!$J:$J,"<0",'Source Report'!X:X,"<>3rd Party")
+  > > Uses the Header (Card Type) of the specific section of the Summary Dashboard as a criteria to match against the Card Type within the Source Report.  If the intended data being pulled is to fill the "Credit" portion of the dashboard, a secondary criteria is added to check against Transaction Amount.  If Transaction Amount is less than Zero, then put data into "Credit" portion.  If greater than Zero, then put data into "Debit" portion.
+
+---------------------------------------
+
+### The following Formula is housed in Sheet2 (Output Dashboard) of the Linked Report.
+
+> * =SUM('Source Report'!J:J)
+  > > Sums the entirety of Column "J" within the Source Report, which is where the numerical values are housed for "Transaction Amount".  (This Formula will be used in parralel with the following Formula)
+
+> * =SUM(C3:C4,C7:C8,C11:C12,C15:C16,C26:C27)
+> > Sums all Numerical Values within the Output Dashboard.
+
+### These two Formulas are are in order to verify that all data was pulled correctly and that there are no Variances.
+
+---------------------------------------
+
+<p align="center">  
+<img src="https://i.imgur.com/Q32Ftra.png"/>
+</p>
+
+<p align="center">  
+<img src="https://i.imgur.com/CUKaUfE.png"/>
+</p>
+
+---------------------------------------
+
