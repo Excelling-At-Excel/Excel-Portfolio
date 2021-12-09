@@ -9,7 +9,7 @@
 # [Project 1: Sales Report By Payment Card Type](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Sales%20Report%20By%20Card%20Type.xlsx)
 > ### With no available Unique Identifiers
 
-## Created a workbook that utilizes a variety of formulas to pull data from a Source Report and Outputs it into a user-friendly dashboard
+## Created a workbook that utilizes a variety of formulas to pull data from a Source Report and Outputs it into a user-friendly summary
 
 ### Formulas/Functions included in this report are as follows:
 > Note: All Full Formulas are included within the Linked Report, but some will not be shown here due to length.
@@ -156,20 +156,46 @@
 
 ### The following Formula is housed in Sheet1 (Source Report) of the Linked Report.
 
-> * =SUMIFS('Source Report'!$J:$J,'Source Report'!$H:$H,'Output Dashboard'!$B$2,'Source Report'!$J:$J,"<0",'Source Report'!X:X,"<>3rd Party")
-  > > Uses the Header (Card Type) of the specific section of the Summary Dashboard as a criteria to match against the Card Type within the Source Report.  If the intended data being pulled is to fill the "Credit" portion of the dashboard, a secondary criteria is added to check against Transaction Amount.  If Transaction Amount is less than Zero, then put data into "Credit" portion.  If greater than Zero, then put data into "Debit" portion.
+> * =IF($F8="00000","3rd Party","")
+  > > This is used in column "AJ" and is used as a helper-column that then lets the formulas in Sheet2 differentiate between Regular Transactions and then 3rd Party Transactions
 
 ---------------------------------------
 
 ### The following Formula is housed in Sheet2 (Output Dashboard) of the Linked Report.
 
-> * =SUM('Source Report'!J:J)
-  > > Sums the entirety of Column "J" within the Source Report, which is where the numerical values are housed for "Transaction Amount".  (This Formula will be used in parallel with the following Formula)
+> * =SUMIFS('Source Report'!$N:$N,'Source Report'!$L:$L,$C$2,'Source Report'!$N:$N,"<0",'Source Report'!$AD:$AD,"<>eCommerce, Channel Encrypt",'Source Report'!$AJ:$AJ,"<>3rd Party")
+  > > Uses the following as Criteria for the SumIfs:
+  > > > Header of the Summary Section (Card Type) as Criteria 1
+  > > > If the Value is less than zero (Credit)  or  more than zero (Debit)
+  > > > Excludes any Transactions that contain the text *"eCommerce, Channel Encrypt"*
+  > > > Excludes any Transactions that contain the text *"3rd Party"*
+  > > This formula, if less than zero, will display what the total "Credit" value is, depending on where is falls with the above criteria.
 
-> * =SUM(C3:C4,C7:C8,C11:C12,C15:C16,C26:C27)
-> > Sums all Numerical Values within the Output Dashboard.
+---------------------------------------
 
-### These two Formulas are used together in order to verify that all data was pulled correctly and that there are no Variances.
+> * =SUM(SUMIFS('Source Report'!$N:$N,'Source Report'!$F:$F,$C$25,'Source Report'!$N:$N,"<0",'Source Report'!$L:$L,{"VISA","MASTERCARD"}))
+> > This formula will look at the "Source Report" and give the user the "Credit" value for the card types; "Visa" and "Mastercard", that have the criteria of *"3rd Party"* (Thanks to the Helper-Column) in Sheet1 (Source Report)
+> > > Uses the following as Criteria for the Sum(SumIfs)
+> > > > Header of the Summary Section (3rd Party) as Criteria 1
+> > > > If the Value isless than zero (Credit)  or  more than zero (Debit)
+> > > The following part of the formula is set as an *"Array"* in order to use multiple criteria in a singular formula
+> > > > "Visa" and "Mastercard"
+> > > This will only give the Value that meets all of the above criteria.  The user of this report needed to show the difference of 3rd Parties by "Visa" and "Mastercard" combined and then needed to show in a separate Summary field what the value for "Discover" was.
+
+---------------------------------------
+
+> * =SUMIFS('Source Report'!$N:$N,'Source Report'!$AD:$AD,"eCommerce, Channel Encrypt",'Source Report'!$N:$N,"<0")
+> > This formula will look at the "Source Report" and give the user the "Credit" value for all card types that have the criteria of "eCommerce, Channel Encrypt" in Sheet1 (Source Report)
+> > > Uses the following as Criteria for the SumIfs
+> > > > If Column "AD" includes "eCommerce, Channel Encrypt" then sum
+
+---------------------------------------
+
+> * =ROUND(SUM('Source Report'!$N:$N),2)
+> * =ROUND(SUM(D3:D4,D7:D8,D11:D12,D15:D16,D26:D27,D34:D35,D30:D31),2)
+> * =I4-I5
+> * =I6=0
+### These four Formulas are used together in order to verify that all data was pulled correctly and that there are no Variances.
 
 ---------------------------------------
 
