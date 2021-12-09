@@ -6,7 +6,7 @@
 <img src="https://www.versionmuseum.com/images/applications/microsoft-excel/microsoft-excel%5E2016%5Eexcel-logo-new.png" width="950" height="250" />
 </p>
   
-# [Project 1: Sales Report By Payment Card Type](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Sales%20Report%20By%20Card%20Type.xlsx)
+# [Project 1: Sales Report By Payment Card Type](https://github.com/Excelling-At-Excel/Excel-Portfolio/raw/main/Sales%20Report%20By%20Card%20Type.xlsx)
 > ### With no available Unique Identifiers
 
 ## Created a workbook that utilizes a variety of formulas to pull data from a Source Report and Outputs it into a user-friendly summary
@@ -70,7 +70,7 @@
   
 ---------------------------------------
 
-# [Project 2: Summary of Funds](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Summary%20of%20Funds.xlsx)
+# [Project 2: Summary of Funds](https://github.com/Excelling-At-Excel/Excel-Portfolio/raw/main/Summary%20of%20Funds.xlsx)
 > ### Report with individual Summaries, per Program, and a Summary Wrap-Up for all Programs
 
 ## Created a workbook that utilizes a variety of formulas to pull data from a multiple Source Report and Outputs it into multiple Program Summary Dashboards and are then tied into an all encompassing Summary Dashboard.
@@ -144,7 +144,7 @@
 
 ---------------------------------------
 
-# [Project 3: Credit Card Transaction Detail](https://github.com/Excelling-At-Excel/Excel-Portfolio/blob/main/Sales%20Report%20By%20Card%20Type.xlsx)
+# [Project 3: Credit Card Transaction Detail](https://github.com/Excelling-At-Excel/Excel-Portfolio/raw/main/Credit%20Card%20Transactions%20Detail.xls)
 > ### Report of Credit Card transactions, broken out by card type and currency.
 
 ## Created a simple workbook that utilizes a basic excel functions, such as SumIfs and CountIfs that gathers data from a singular source report and disperses it into a multilayered Summary Dashboard.
