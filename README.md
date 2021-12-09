@@ -200,11 +200,11 @@
 ---------------------------------------
 
 <p align="center">  
-<img src="https://i.imgur.com/Q32Ftra.png"/>
+<img src="https://i.imgur.com/CYKEI4X.png"/>
 </p>
 
 <p align="center">  
-<img src="https://i.imgur.com/CUKaUfE.png"/>
+<img src="https://i.imgur.com/v6fm0sn.png"/>
 </p>
 
 ---------------------------------------
