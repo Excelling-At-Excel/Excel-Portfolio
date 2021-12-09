@@ -191,11 +191,11 @@
 
 ---------------------------------------
 
+### These four Formulas are used together in order to verify that all data was pulled correctly and that there are no Variances.
 > * =ROUND(SUM('Source Report'!$N:$N),2)
 > * =ROUND(SUM(D3:D4,D7:D8,D11:D12,D15:D16,D26:D27,D34:D35,D30:D31),2)
 > * =I4-I5
 > * =I6=0
-### These four Formulas are used together in order to verify that all data was pulled correctly and that there are no Variances.
 
 ---------------------------------------
 
@@ -208,4 +208,3 @@
 </p>
 
 ---------------------------------------
-
