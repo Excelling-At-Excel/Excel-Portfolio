@@ -161,7 +161,7 @@
 
 ---------------------------------------
 
-### The following Formula is housed in Sheet2 (Output Dashboard) of the Linked Report.
+### The following Formulas are housed in Sheet2 (Output Dashboard) of the Linked Report.
 
 > * =SUMIFS('Source Report'!$N:$N,'Source Report'!$L:$L,$C$2,'Source Report'!$N:$N,"<0",'Source Report'!$AD:$AD,"<>eCommerce, Channel Encrypt",'Source Report'!$AJ:$AJ,"<>3rd Party")
   > > Uses the following as Criteria for the SumIfs:
